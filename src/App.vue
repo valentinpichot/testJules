@@ -9,6 +9,7 @@
   <div id="free-zone">
     <FreeZone />
   </div>
+  <SwiperSlider />
   <div id="contact">
     <ContactPage />
   </div>
@@ -21,6 +22,7 @@ import Navbar from './components/Navbar.vue';
 import Header from './components/Header.vue';
 import CompanyPresentation from './components/CompanyPresentation.vue';
 import FreeZone from './components/FreeZone.vue';
+import SwiperSlider from './components/SwiperSlider.vue';
 import ContactPage from './components/ContactPage.vue';
 import Footer from './components/Footer.vue';
 import { useLenis } from './composables/useLenis';
@@ -32,6 +34,7 @@ export default defineComponent({
     Header,
     CompanyPresentation,
     FreeZone,
+    SwiperSlider,
     ContactPage,
     Footer,
   },
