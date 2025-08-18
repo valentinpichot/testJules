@@ -1,9 +1,9 @@
 <template>
-  <section class="company-presentation fade-in" ref="companyPresentation">
+  <section class="free-zone fade-in" ref="freeZone">
     <div class="container">
-      <h2 ref="h2">About Our Company</h2>
+      <h2 ref="h2">Free Zone</h2>
       <p ref="p">
-        We are a team of passionate individuals dedicated to creating elegant and engaging digital experiences. Our focus is on quality, innovation, and user satisfaction. We believe in the power of technology to transform businesses and connect people.
+        This is a flexible content area. You can add any content you want here, such as text, images, or even other components.
       </p>
     </div>
   </section>
@@ -14,9 +14,9 @@ import { defineComponent, onMounted, ref } from 'vue';
 import { gsap } from 'gsap';
 
 export default defineComponent({
-  name: 'CompanyPresentation',
+  name: 'FreeZone',
   setup() {
-    const companyPresentation = ref<Element | null>(null);
+    const freeZone = ref<Element | null>(null);
     const h2 = ref<Element | null>(null);
     const p = ref<Element | null>(null);
 
@@ -41,13 +41,13 @@ export default defineComponent({
         }
       );
 
-      if (companyPresentation.value) {
-        observer.observe(companyPresentation.value);
+      if (freeZone.value) {
+        observer.observe(freeZone.value);
       }
     });
 
     return {
-      companyPresentation,
+      freeZone,
       h2,
       p,
     };
@@ -56,7 +56,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.company-presentation {
+.free-zone {
   padding: 100px 0;
   background-color: #f8f8f8;
 }
@@ -78,7 +78,7 @@ p {
 }
 
 @media (max-width: 768px) {
-  .company-presentation {
+  .free-zone {
     padding: 80px 20px;
   }
 
@@ -92,7 +92,7 @@ p {
 }
 
 @media (max-width: 480px) {
-  .company-presentation {
+  .free-zone {
     padding: 60px 20px;
   }
 

@@ -1,9 +1,9 @@
 <template>
   <section class="contact-page fade-in" ref="contactPage">
     <div class="container">
-      <h2>Contact Us</h2>
+      <h2 ref="h2">Contact Us</h2>
       <div class="contact-info">
-        <div class="contact-form">
+        <div class="contact-form" ref="contactForm">
           <form>
             <input type="text" placeholder="Your Name" />
             <input type="email" placeholder="Your Email" />
@@ -11,7 +11,7 @@
             <button type="submit">Send Message</button>
           </form>
         </div>
-        <div class="contact-details">
+        <div class="contact-details" ref="contactDetails">
           <h3>Our Address</h3>
           <p>123 Main Street, Anytown, USA 12345</p>
           <h3>Phone</h3>
@@ -30,11 +30,15 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
+import { gsap } from 'gsap';
 
 export default defineComponent({
   name: 'ContactPage',
   setup() {
     const contactPage = ref<Element | null>(null);
+    const h2 = ref<Element | null>(null);
+    const contactForm = ref<Element | null>(null);
+    const contactDetails = ref<Element | null>(null);
 
     onMounted(() => {
       const observer = new IntersectionObserver(
@@ -42,6 +46,12 @@ export default defineComponent({
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('is-visible');
+              gsap.from([h2.value, contactForm.value, contactDetails.value], {
+                autoAlpha: 0,
+                y: 10,
+                duration: 0.5,
+                stagger: 0.2,
+              });
               observer.unobserve(entry.target);
             }
           });
@@ -58,6 +68,9 @@ export default defineComponent({
 
     return {
       contactPage,
+      h2,
+      contactForm,
+      contactDetails,
     };
   },
 });
