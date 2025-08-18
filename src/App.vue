@@ -12,6 +12,7 @@
   <div id="contact">
     <ContactPage />
   </div>
+  <Footer />
 </template>
 
 <script lang="ts">
@@ -21,6 +22,7 @@ import Header from './components/Header.vue';
 import CompanyPresentation from './components/CompanyPresentation.vue';
 import FreeZone from './components/FreeZone.vue';
 import ContactPage from './components/ContactPage.vue';
+import Footer from './components/Footer.vue';
 import { useLenis } from './composables/useLenis';
 
 export default defineComponent({
@@ -31,6 +33,7 @@ export default defineComponent({
     CompanyPresentation,
     FreeZone,
     ContactPage,
+    Footer,
   },
   setup() {
     useLenis();

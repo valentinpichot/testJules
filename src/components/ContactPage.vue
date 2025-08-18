@@ -12,10 +12,10 @@
           </form>
         </div>
         <div class="contact-details" ref="contactDetails">
-          <h3>Our Address</h3>
-          <p>123 Main Street, Anytown, USA 12345</p>
-          <h3>Phone</h3>
-          <p>(123) 456-7890</p>
+          <h3>Notre Adresse</h3>
+          <p>123 Rue de la République, 75001 Paris, France</p>
+          <h3>Téléphone</h3>
+          <p>+33 1 23 45 67 89</p>
           <h3>Social Media</h3>
           <div class="social-links">
             <a href="#">Facebook</a>
