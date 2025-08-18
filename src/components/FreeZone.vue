@@ -1,10 +1,11 @@
 <template>
-  <section class="free-zone fade-in" ref="freeZone">
+  <section class="free-zone" ref="freeZone">
     <div class="container">
       <h2 ref="h2">Free Zone</h2>
       <p ref="p">
         This is a flexible content area. You can add any content you want here, such as text, images, or even other components.
       </p>
+      <SwiperSlider />
     </div>
   </section>
 </template>
@@ -12,9 +13,13 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
 import { gsap } from 'gsap';
+import SwiperSlider from './SwiperSlider.vue';
 
 export default defineComponent({
   name: 'FreeZone',
+  components: {
+    SwiperSlider,
+  },
   setup() {
     const freeZone = ref<Element | null>(null);
     const h2 = ref<Element | null>(null);
@@ -25,7 +30,6 @@ export default defineComponent({
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
               gsap.from([h2.value, p.value], {
                 autoAlpha: 0,
                 y: 10,
