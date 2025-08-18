@@ -43,6 +43,7 @@ export default defineComponent({
   width: 100%;
   height: 400px;
   padding: 50px 0;
+  position: relative;
 }
 
 .swiper-slide {
