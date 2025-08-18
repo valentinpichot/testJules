@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar" :class="{ scrolled: isScrolled }">
     <div class="container">
       <div class="logo">
         <a href="#" @click.prevent="scrollTo('#home')">MyCompany</a>
@@ -20,12 +20,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, onMounted, onUnmounted } from 'vue';
 
 export default defineComponent({
   name: 'Navbar',
   setup() {
     const isMenuOpen = ref(false);
+    const isScrolled = ref(false);
 
     const toggleMenu = () => {
       isMenuOpen.value = !isMenuOpen.value;
@@ -39,8 +40,21 @@ export default defineComponent({
       }
     };
 
+    const handleScroll = () => {
+      isScrolled.value = window.scrollY > 50;
+    };
+
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+
     return {
       isMenuOpen,
+      isScrolled,
       toggleMenu,
       scrollTo,
     };
@@ -50,13 +64,19 @@ export default defineComponent({
 
 <style scoped>
 .navbar {
-  background-color: #333;
+  background-color: transparent;
   color: white;
   padding: 1rem;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .container {

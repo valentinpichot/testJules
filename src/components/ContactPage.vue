@@ -78,18 +78,19 @@ export default defineComponent({
 
 <style scoped>
 .contact-page {
-  padding: 100px 0;
-  background-color: #fff;
+  padding: 120px 0;
+  background-color: var(--background-color);
 }
 
 .container {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 600;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -101,36 +102,53 @@ h2 {
 
 .contact-form {
   flex: 1;
-  margin-right: 40px;
+  margin-right: 60px;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-family: var(--font-family);
+  font-size: 1rem;
 }
 
 .contact-form button {
   width: 100%;
   padding: 15px;
-  background-color: #333;
+  background-color: var(--primary-color);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .contact-details {
   flex: 1;
 }
 
+.contact-details h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contact-details p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
 .social-links a {
-  margin-right: 10px;
-  color: #333;
+  margin-right: 15px;
+  color: var(--text-color);
   text-decoration: none;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -141,16 +159,6 @@ h2 {
   .contact-form {
     margin-right: 0;
     margin-bottom: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-page {
-    padding: 60px 20px;
-  }
-
-  h2 {
-    font-size: 2rem;
   }
 }
 </style>

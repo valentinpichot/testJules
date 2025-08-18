@@ -21,6 +21,7 @@ import Header from './components/Header.vue';
 import CompanyPresentation from './components/CompanyPresentation.vue';
 import FreeZone from './components/FreeZone.vue';
 import ContactPage from './components/ContactPage.vue';
+import { useLenis } from './composables/useLenis';
 
 export default defineComponent({
   name: 'App',
@@ -30,6 +31,9 @@ export default defineComponent({
     CompanyPresentation,
     FreeZone,
     ContactPage,
+  },
+  setup() {
+    useLenis();
   },
 });
 </script>

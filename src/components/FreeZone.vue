@@ -57,33 +57,37 @@ export default defineComponent({
 
 <style scoped>
 .free-zone {
-  padding: 100px 0;
-  background-color: #f8f8f8;
+  padding: 120px 0;
+  background-color: var(--secondary-color);
 }
 
 .container {
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
+  text-align: center;
 }
 
 h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
   .free-zone {
-    padding: 80px 20px;
+    padding: 100px 20px;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   p {
@@ -93,11 +97,11 @@ p {
 
 @media (max-width: 480px) {
   .free-zone {
-    padding: 60px 20px;
+    padding: 80px 20px;
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   p {

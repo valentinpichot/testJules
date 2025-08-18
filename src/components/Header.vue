@@ -40,7 +40,7 @@ export default defineComponent({
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: -2;
 }
 
 .video-overlay {
@@ -49,7 +49,8 @@ export default defineComponent({
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
 }
 
 .header-content {
@@ -57,23 +58,34 @@ export default defineComponent({
   z-index: 1;
 }
 
+.header-content h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.header-content p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 @media (max-width: 768px) {
   .header-content h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .header-content p {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .header-content h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   .header-content p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 </style>
