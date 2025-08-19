@@ -4,7 +4,7 @@
       TODO: Replace this video with your own.
       The video is located in the `public` directory.
     -->
-    <video src="/header-video.mp4" autoplay loop muted playsinline class="video-bg"></video>
+    <video src="/jules-header.mp4" autoplay loop muted playsinline class="video-bg"></video>
     <div class="video-overlay"></div>
     <div class="header-content">
       <h1>Welcome to Our Company</h1>

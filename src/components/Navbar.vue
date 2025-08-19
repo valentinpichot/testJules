@@ -11,8 +11,8 @@
         <ul>
           <li><a href="#home" @click.prevent="scrollTo('#home')">Home</a></li>
           <li><a href="#about" @click.prevent="scrollTo('#about')">About</a></li>
-          <li><a href="#contact" @click.prevent="scrollTo('#contact')">Contact</a></li>
           <li><a href="#free-zone" @click.prevent="scrollTo('#free-zone')">Free Zone</a></li>
+          <li><a href="#contact" @click.prevent="scrollTo('#contact')">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -71,11 +71,11 @@ export default defineComponent({
   width: 100%;
   top: 0;
   z-index: 1000;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.7s ease-in-out;
 }
 
 .navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
 }
 

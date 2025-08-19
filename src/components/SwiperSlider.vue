@@ -1,9 +1,12 @@
 <template>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide"><img src="https://swiperjs.com/demos/images/nature-2.jpg"/>
+      </div>
+      <div class="swiper-slide"><img src="https://swiperjs.com/demos/images/nature-5.jpg"/>
+      </div>
+      <div class="swiper-slide"><img src="https://swiperjs.com/demos/images/nature-6.jpg"/>
+      </div>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
@@ -14,8 +17,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue';
+import {defineComponent, onMounted} from 'vue';
 import Swiper from 'swiper';
+import {Navigation, Pagination, EffectCoverflow} from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
 export default defineComponent({
@@ -23,7 +27,20 @@ export default defineComponent({
   setup() {
     onMounted(() => {
       new Swiper('.swiper-container', {
-        loop: true,
+        modules: [Navigation, Pagination, EffectCoverflow],
+        loop: false,
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        speed: 700,
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 50,
+          depth: 1,
+          modifier: 1,
+          slideShadows: true,
+        },
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
@@ -54,5 +71,9 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   border: 1px solid #e5e5e5;
+  height: 300px;
+  margin: auto;
+  overflow: hidden;
 }
+
 </style>
